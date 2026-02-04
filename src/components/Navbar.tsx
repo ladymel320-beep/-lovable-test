@@ -9,14 +9,14 @@ const Navbar: React.FC = () => {
       <div className="nav-container">
         <div className="nav-logo">
           <span className="logo-icon">✨</span>
-          <span className="logo-text">Lovable</span>
+          <span className="logo-text">Website Builder Express</span>
         </div>
         
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <a href="#home" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</a>
+          <a href="#features" className="nav-link" onClick={() => setIsMenuOpen(false)}>Features</a>
+          <a href="#pricing" className="nav-link" onClick={() => setIsMenuOpen(false)}>Pricing</a>
+          <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
         </div>
 
         <button className="cta-button">Get Started</button>

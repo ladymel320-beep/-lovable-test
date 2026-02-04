@@ -1,0 +1,81 @@
+════════════════════════════════════════════════════════════════
+🚀 DEPLOY WEBSITE BUILDER EXPRESS - STEP BY STEP
+════════════════════════════════════════════════════════════════
+
+📍 YOUR WEBSITE LOCATION:
+/Users/melanieastles/Desktop/Website Mel Test /lovable-site/
+
+════════════════════════════════════════════════════════════════
+METHOD 1: VERCEL WEB UPLOAD (EASIEST - 2 MINUTES)
+════════════════════════════════════════════════════════════════
+
+STEP 1: Open Vercel
+→ Go to: https://vercel.com/new
+
+STEP 2: Sign Up/Login (FREE)
+→ Click "Continue with GitHub" (recommended)
+   OR use Google, GitLab, or Email
+→ No credit card required!
+
+STEP 3: Deploy
+→ Click "Deploy without Git" or browse for folder
+→ Navigate to: /Users/melanieastles/Desktop/Website Mel Test /lovable-site/
+→ Select the entire "lovable-site" folder
+→ Click "Upload"
+
+STEP 4: Wait 30 seconds
+→ Vercel will automatically detect it's a Vite project
+→ Build will start automatically
+→ You'll get a live URL!
+
+YOUR LIVE URL WILL BE:
+https://website-builder-express-[random].vercel.app
+
+════════════════════════════════════════════════════════════════
+METHOD 2: NETLIFY DROP (ALTERNATIVE - 1 MINUTE)
+════════════════════════════════════════════════════════════════
+
+STEP 1: Open Netlify Drop
+→ Go to: https://app.netlify.com/drop
+
+STEP 2: Drag & Drop
+→ Navigate to: /Users/melanieastles/Desktop/Website Mel Test /lovable-site/dist/
+→ Drag the "dist" folder onto the page
+→ Drop it!
+
+STEP 3: Done!
+→ Instant deployment
+→ Get your live URL immediately
+
+YOUR LIVE URL WILL BE:
+https://[random-name].netlify.app
+
+════════════════════════════════════════════════════════════════
+AFTER DEPLOYMENT
+════════════════════════════════════════════════════════════════
+
+✅ You'll get a live URL you can share immediately
+✅ Free HTTPS/SSL included
+✅ Global CDN for fast loading worldwide
+✅ Can add custom domain later
+✅ Automatic updates when you re-deploy
+
+CUSTOM DOMAIN (Optional):
+→ Buy domain from Namecheap, GoDaddy, etc.
+→ In Vercel/Netlify dashboard: Settings → Domains
+→ Follow instructions to connect your domain
+
+════════════════════════════════════════════════════════════════
+NEED HELP?
+════════════════════════════════════════════════════════════════
+
+If you encounter any issues, just let me know and I'll help!
+
+Common issues:
+- Can't find folder: Use Finder to navigate to Desktop → "Website Mel Test " → lovable-site
+- Upload fails: Try Netlify Drop method with the "dist" folder instead
+- Need to update: Just upload again to overwrite
+
+════════════════════════════════════════════════════════════════
+
+🎉 Your website is amazing and ready to launch! 🎉

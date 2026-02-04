@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad)"/>
+  
+  <!-- Website builder icon - simplified browser window with code -->
+  <rect x="20" y="25" width="60" height="50" rx="4" fill="white" opacity="0.95"/>
+  
+  <!-- Browser top bar -->
+  <rect x="20" y="25" width="60" height="8" rx="4" fill="white"/>
+  <circle cx="26" cy="29" r="1.5" fill="#ec4899"/>
+  <circle cx="31" cy="29" r="1.5" fill="#8b5cf6"/>
+  <circle cx="36" cy="29" r="1.5" fill="#6366f1"/>
+  
+  <!-- Code brackets -->
+  <text x="30" y="52" font-family="monospace" font-size="20" font-weight="bold" fill="url(#grad)">&lt;/&gt;</text>
+  
+  <!-- Lightning bolt for "Express" -->
+  <path d="M 65 45 L 60 52 L 63 52 L 58 62 L 66 52 L 63 52 Z" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.5"/>
+</svg>

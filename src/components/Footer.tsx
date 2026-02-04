@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           <div className="footer-brand">
             <div className="footer-logo">
               <span className="logo-icon">✨</span>
-              <span className="logo-text">Lovable</span>
+              <span className="logo-text">Website Builder Express</span>
             </div>
             <p className="footer-tagline">
               Building amazing digital experiences, one project at a time.
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2024 Lovable. All rights reserved.</p>
+          <p>&copy; 2024 Website Builder Express. All rights reserved.</p>
           <div className="footer-social">
             <a href="#" className="social-link">Twitter</a>
             <a href="#" className="social-link">GitHub</a>
