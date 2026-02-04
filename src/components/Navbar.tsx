@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+import './Navbar.css';
+
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <nav className="navbar">
+      <div className="nav-container">
+        <div className="nav-logo">
+          <span className="logo-icon">✨</span>
+          <span className="logo-text">Lovable</span>
+        </div>
+        
+        <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          <a href="#home" className="nav-link">Home</a>
+          <a href="#features" className="nav-link">Features</a>
+          <a href="#about" className="nav-link">About</a>
+          <a href="#contact" className="nav-link">Contact</a>
+        </div>
+
+        <button className="cta-button">Get Started</button>
+        
+        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
