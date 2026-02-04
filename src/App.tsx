@@ -1,27 +1,18 @@
 import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Testimonials from './components/Testimonials'
-import Pricing from './components/Pricing'
-import FAQ from './components/FAQ'
-import CTA from './components/CTA'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import BuilderPage from './pages/BuilderPage'
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <Features />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <CTA />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/builder" element={<BuilderPage />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

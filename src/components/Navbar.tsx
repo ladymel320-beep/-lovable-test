@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
           <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
         </div>
 
-        <button className="cta-button">Get Started</button>
+        <a href="/builder" className="cta-button">Get Started</a>
         
         <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span></span>

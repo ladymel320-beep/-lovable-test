@@ -1,0 +1,243 @@
+.canvas {
+  flex: 1;
+  background: #f3f4f6;
+  overflow-y: auto;
+  position: relative;
+  height: 100%;
+}
+
+.canvas-toolbar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.canvas-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.canvas-icon {
+  font-size: 1.3rem;
+}
+
+.canvas-hint {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.canvas-content {
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+.canvas-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 400px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.canvas-empty h3 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.canvas-empty p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.component-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.canvas-component {
+  position: relative;
+  min-height: 40px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.canvas-component:hover {
+  outline-color: #93c5fd;
+}
+
+.canvas-component.selected {
+  outline-color: #6366f1;
+  outline-width: 3px;
+}
+
+.canvas-component.drag-over {
+  outline-color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.canvas-component.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.canvas-component.text {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.7;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.canvas-component.button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.canvas-component.image {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: #f3f4f6;
+  font-size: 2rem;
+  color: #9ca3af;
+}
+
+.image-note {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  color: #6b7280;
+}
+
+.canvas-component.container {
+  background: white;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-height: 100px;
+}
+
+.container-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.container-empty {
+  color: #9ca3af;
+  text-align: center;
+  padding: 2rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 6px;
+}
+
+.canvas-component.spacer {
+  background: transparent;
+  padding: 1rem;
+}
+
+.spacer-visual {
+  border: 1px dashed #d1d5db;
+  padding: 0.5rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
+.component-actions {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  display: flex;
+  gap: 0.25rem;
+  z-index: 5;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .canvas-content {
+    padding: 1rem;
+  }
+  
+  .canvas-hint {
+    display: none;
+  }
+}

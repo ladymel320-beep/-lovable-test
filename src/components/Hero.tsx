@@ -15,8 +15,8 @@ const Hero: React.FC = () => {
             Fast, beautiful, and built for the future.
           </p>
           <div className="hero-buttons">
-            <button className="primary-button">Start Building</button>
-            <button className="secondary-button">Learn More</button>
+            <a href="/builder" className="primary-button">Start Building</a>
+            <a href="#features" className="secondary-button">Learn More</a>
           </div>
         </div>
         <div className="hero-visual">
