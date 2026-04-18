@@ -1,105 +1,55 @@
 import React from 'react';
 import './Testimonials.css';
 
-const Testimonials: React.FC = () => {
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      role: 'Founder, TechStart',
-      image: '👩‍💼',
-      rating: 5,
-      text: 'Website Builder Express transformed how we build our web presence. The intuitive interface and powerful features saved us countless hours and thousands of dollars.'
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Designer, CreativeHub',
-      image: '👨‍🎨',
-      rating: 5,
-      text: 'As a designer, I appreciate the attention to detail and the beautiful templates. The customization options are endless, and the results are always stunning.'
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Marketing Director, GrowthCo',
-      image: '👩‍💻',
-      rating: 5,
-      text: 'The best investment we made this year! Our website traffic increased by 150% within the first month. The performance and SEO features are top-notch.'
-    },
-    {
-      name: 'David Park',
-      role: 'Entrepreneur',
-      image: '👨‍💼',
-      rating: 5,
-      text: 'I launched my business website in just 2 days without any coding knowledge. The support team is incredible, and the platform is so easy to use.'
-    },
-    {
-      name: 'Lisa Anderson',
-      role: 'Blogger, LifestyleDaily',
-      image: '👩',
-      rating: 5,
-      text: 'Finally, a website builder that gets it right! Fast loading times, beautiful designs, and the pricing is very reasonable. Highly recommend!'
-    },
-    {
-      name: 'James Wilson',
-      role: 'CEO, InnovateLabs',
-      image: '👨',
-      rating: 5,
-      text: 'We switched from our old platform and never looked back. The migration was smooth, and the features are exactly what a modern business needs.'
-    }
-  ];
+const quotes = [
+  {
+    text: "Mélanie Astles, première femme à décrocher une victoire en Red Bull Air Race, symbolise l'élégance et la détermination d'une génération de pilotes qui ne connaît plus de plafond.",
+    source: 'Le Figaro',
+    type: 'Presse écrite',
+  },
+  {
+    text: "Six titres de championne de France, une carrière internationale : Mélanie incarne la voltige aérienne française au plus haut niveau.",
+    source: 'Fédération Française Aéronautique',
+    type: 'Institution',
+  },
+  {
+    text: "Une trajectoire hors norme, de la station-service aux cockpits les plus convoités au monde — l'histoire de Mélanie Astles inspire par sa rigueur et sa passion.",
+    source: 'Vice Sports',
+    type: 'Interview',
+  },
+];
 
+const Testimonials: React.FC = () => {
   return (
-    <section className="testimonials">
-      <div className="testimonials-container">
-        <div className="testimonials-header">
-          <h2 className="testimonials-title">
-            Loved by <span className="gradient-text">Thousands</span>
-          </h2>
-          <p className="testimonials-subtitle">
-            See what our customers are saying about Website Builder Express
+    <section id="presse" className="press">
+      <div className="container">
+        <div className="press-header">
+          <span className="section-kicker">Presse</span>
+          <h2 className="section-title">Ils en parlent</h2>
+          <div className="gold-rule center" />
+          <p className="section-subtitle">
+            Retrouvez Mélanie Astles dans les médias français et internationaux — de la télévision
+            aux plus grands titres de la presse spécialisée.
           </p>
         </div>
 
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="testimonial-card"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="stars">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="star">⭐</span>
-                ))}
-              </div>
-              
-              <p className="testimonial-text">"{testimonial.text}"</p>
-              
-              <div className="testimonial-author">
-                <div className="author-avatar">{testimonial.image}</div>
-                <div className="author-info">
-                  <div className="author-name">{testimonial.name}</div>
-                  <div className="author-role">{testimonial.role}</div>
-                </div>
-              </div>
-            </div>
+        <div className="press-grid">
+          {quotes.map((q) => (
+            <figure className="press-card" key={q.source}>
+              <div className="quote-mark" aria-hidden="true">&ldquo;</div>
+              <blockquote>{q.text}</blockquote>
+              <figcaption>
+                <span className="press-source">{q.source}</span>
+                <span className="press-type">{q.type}</span>
+              </figcaption>
+            </figure>
           ))}
         </div>
 
-        <div className="testimonials-footer">
-          <div className="trust-badges">
-            <div className="trust-badge">
-              <span className="badge-icon">🏆</span>
-              <span className="badge-text">Award Winning</span>
-            </div>
-            <div className="trust-badge">
-              <span className="badge-icon">⭐</span>
-              <span className="badge-text">4.9/5 Rating</span>
-            </div>
-            <div className="trust-badge">
-              <span className="badge-icon">✓</span>
-              <span className="badge-text">Trusted by 50K+</span>
-            </div>
-          </div>
+        <div className="press-logos" aria-label="Médias">
+          {['BFMTV', 'Le Figaro', 'France 3', 'Vice', 'Paris Match', 'RTL', 'L\'Équipe'].map((m) => (
+            <span key={m} className="press-logo">{m}</span>
+          ))}
         </div>
       </div>
     </section>

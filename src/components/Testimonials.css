@@ -1,182 +1,98 @@
-.testimonials {
-  padding: 6rem 2rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+.press {
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
 }
 
-.testimonials-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.testimonials-header {
+.press-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.testimonials-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #1f2937;
-  margin-bottom: 1rem;
-}
-
-.testimonials-subtitle {
-  font-size: 1.25rem;
-  color: #6b7280;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.testimonials-grid {
+.press-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 4rem;
 }
 
-.testimonial-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.6s ease-out both;
-  border: 2px solid transparent;
+.press-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 2.5rem 2rem 2rem;
+  border-radius: 6px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.press-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(10, 31, 61, 0.08);
+}
+
+.quote-mark {
+  position: absolute;
+  top: -10px;
+  left: 1.25rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.press-card blockquote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--color-navy);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 1rem 0 1.5rem;
+}
+
+.press-card figcaption {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  border-color: #6366f1;
-}
-
-.stars {
-  display: flex;
-  gap: 0.25rem;
-}
-
-.star {
-  font-size: 1.2rem;
-}
-
-.testimonial-text {
-  color: #4b5563;
-  font-size: 1rem;
-  line-height: 1.7;
-  flex-grow: 1;
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e5e7eb;
-}
-
-.author-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.author-info {
-  flex-grow: 1;
-}
-
-.author-name {
+.press-source {
   font-weight: 700;
-  color: #1f2937;
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
-
-.author-role {
-  color: #6b7280;
-  font-size: 0.9rem;
-}
-
-.testimonials-footer {
-  margin-top: 3rem;
-}
-
-.trust-badges {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.trust-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  background: white;
-  border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.trust-badge:hover {
-  transform: translateY(-3px);
-}
-
-.badge-icon {
-  font-size: 1.5rem;
-}
-
-.badge-text {
-  font-weight: 600;
-  color: #4b5563;
+  color: var(--color-navy);
   font-size: 0.95rem;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.press-type {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
 }
 
-@media (max-width: 768px) {
-  .testimonials {
-    padding: 4rem 1.5rem;
-  }
+.press-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
 
-  .testimonials-title {
-    font-size: 2rem;
-  }
+.press-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--color-text-light);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  transition: color 0.25s ease;
+}
 
-  .testimonials-subtitle {
-    font-size: 1.1rem;
-  }
+.press-logo:hover {
+  color: var(--color-navy);
+}
 
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .trust-badges {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .trust-badge {
-    justify-content: center;
-  }
+@media (max-width: 900px) {
+  .press-grid { grid-template-columns: 1fr; }
+  .press { padding: 5rem 0; }
 }

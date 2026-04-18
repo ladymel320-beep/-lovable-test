@@ -3,44 +3,32 @@ import './CTA.css';
 
 const CTA: React.FC = () => {
   return (
-    <section className="cta">
-      <div className="cta-container">
-        <div className="cta-content">
-          <h2 className="cta-title">
-            Ready to Build Something <span className="gradient-text">Amazing?</span>
-          </h2>
-          <p className="cta-description">
-            Join thousands of creators building beautiful websites with Website Builder Express. 
-            Start your free trial today - no credit card required.
-          </p>
-          <div className="cta-buttons">
-            <button className="cta-primary-button">Start Free Trial</button>
-            <button className="cta-secondary-button">Schedule Demo</button>
-          </div>
-          <p className="cta-note">
-            ✨ 14-day free trial • No credit card required • Cancel anytime
-          </p>
-        </div>
-        
-        <div className="cta-stats">
-          <div className="stat-item">
-            <div className="stat-number">50K+</div>
-            <div className="stat-label">Active Users</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">100K+</div>
-            <div className="stat-label">Websites Created</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">4.9/5</div>
-            <div className="stat-label">Customer Rating</div>
-          </div>
-        </div>
+    <section className="conferences">
+      <div className="conferences-backdrop" aria-hidden="true">
+        <div className="conf-orb orb-a" />
+        <div className="conf-orb orb-b" />
       </div>
-      
-      <div className="cta-background">
-        <div className="cta-orb orb-1"></div>
-        <div className="cta-orb orb-2"></div>
+      <div className="container conferences-inner">
+        <div className="conferences-content">
+          <span className="section-kicker gold">Conférences &amp; Événements</span>
+          <h2 className="conferences-title">
+            Inviter Mélanie&nbsp;:<br/>
+            <span className="accent">la voltige comme moteur&nbsp;d'inspiration.</span>
+          </h2>
+          <p className="conferences-text">
+            Entreprises, écoles, événements sportifs&nbsp;— Mélanie partage son parcours,
+            sa méthode et sa passion pour transmettre des valeurs de dépassement,
+            de résilience et d'engagement.
+          </p>
+          <div className="conf-topics">
+            <span className="topic-chip">Motivation</span>
+            <span className="topic-chip">Leadership</span>
+            <span className="topic-chip">Femmes &amp; sport</span>
+            <span className="topic-chip">Gestion du stress</span>
+            <span className="topic-chip">Performance</span>
+          </div>
+          <a href="#contact" className="conferences-button">Organiser une conférence</a>
+        </div>
       </div>
     </section>
   );

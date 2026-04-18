@@ -14,11 +14,7 @@ const Contact: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    // Clear error when user starts typing
+    setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -26,45 +22,26 @@ const Contact: React.FC = () => {
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
-    }
-
+    if (!formData.name.trim()) newErrors.name = 'Merci d\'indiquer votre nom';
+    if (!formData.email.trim()) newErrors.email = 'Merci d\'indiquer votre email';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      newErrors.email = 'Adresse email invalide';
+    if (!formData.subject.trim()) newErrors.subject = 'Merci d\'indiquer un sujet';
+    if (!formData.message.trim()) newErrors.message = 'Merci de rédiger un message';
+    else if (formData.message.trim().length < 10)
+      newErrors.message = 'Votre message est trop court (10 caractères minimum)';
     return newErrors;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     const newErrors = validateForm();
-    
     if (Object.keys(newErrors).length === 0) {
-      // Form is valid - simulate submission
-      console.log('Form submitted:', formData);
       setSubmitted(true);
-      
-      // Reset form after 3 seconds
       setTimeout(() => {
         setFormData({ name: '', email: '', subject: '', message: '' });
         setSubmitted(false);
-      }, 3000);
+      }, 3500);
     } else {
       setErrors(newErrors);
     }
@@ -72,41 +49,48 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="contact">
-      <div className="contact-container">
+      <div className="container">
         <div className="contact-content">
           <div className="contact-info">
-            <h2 className="contact-title">
-              Get in <span className="gradient-text">Touch</span>
-            </h2>
+            <span className="section-kicker">Contact</span>
+            <h2 className="section-title">Prenons contact</h2>
+            <div className="gold-rule" />
             <p className="contact-description">
-              Have a question or want to work together? We'd love to hear from you. 
-              Send us a message and we'll respond as soon as possible.
+              Conférences, interviews, partenariats, événements sportifs ou invitations&nbsp;—
+              écrivez‑moi directement. Je vous réponds personnellement dans les meilleurs délais.
             </p>
 
             <div className="contact-details">
               <div className="detail-item">
-                <div className="detail-icon">📧</div>
+                <div className="detail-icon">✉</div>
                 <div className="detail-text">
                   <h4>Email</h4>
-                  <p>hello@websitebuilderexpress.com</p>
+                  <p>contact@melanieastles.info</p>
                 </div>
               </div>
 
               <div className="detail-item">
-                <div className="detail-icon">💬</div>
+                <div className="detail-icon">✈</div>
                 <div className="detail-text">
-                  <h4>Live Chat</h4>
-                  <p>Available Mon-Fri, 9am-5pm EST</p>
+                  <h4>Représentation &amp; booking</h4>
+                  <p>Agence conférences &amp; événementiel</p>
                 </div>
               </div>
 
               <div className="detail-item">
-                <div className="detail-icon">📍</div>
+                <div className="detail-icon">◎</div>
                 <div className="detail-text">
-                  <h4>Location</h4>
-                  <p>San Francisco, CA</p>
+                  <h4>Localisation</h4>
+                  <p>Sud de la France · Déplacements internationaux</p>
                 </div>
               </div>
+            </div>
+
+            <div className="social-row">
+              <a href="#" aria-label="Instagram" className="social-pill">Instagram</a>
+              <a href="#" aria-label="Facebook" className="social-pill">Facebook</a>
+              <a href="#" aria-label="LinkedIn" className="social-pill">LinkedIn</a>
+              <a href="#" aria-label="YouTube" className="social-pill">YouTube</a>
             </div>
           </div>
 
@@ -114,13 +98,13 @@ const Contact: React.FC = () => {
             {submitted ? (
               <div className="success-message">
                 <div className="success-icon">✓</div>
-                <h3>Message Sent!</h3>
-                <p>Thank you for reaching out. We'll get back to you soon.</p>
+                <h3>Message envoyé&nbsp;!</h3>
+                <p>Merci pour votre message. Je vous répondrai dès que possible.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="contact-form">
+              <form onSubmit={handleSubmit} className="contact-form" noValidate>
                 <div className="form-group">
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">Nom</label>
                   <input
                     type="text"
                     id="name"
@@ -128,7 +112,7 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className={errors.name ? 'error' : ''}
-                    placeholder="Your name"
+                    placeholder="Votre nom"
                   />
                   {errors.name && <span className="error-message">{errors.name}</span>}
                 </div>
@@ -142,13 +126,13 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className={errors.email ? 'error' : ''}
-                    placeholder="your.email@example.com"
+                    placeholder="votre.email@exemple.com"
                   />
                   {errors.email && <span className="error-message">{errors.email}</span>}
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Subject</label>
+                  <label htmlFor="subject">Sujet</label>
                   <input
                     type="text"
                     id="subject"
@@ -156,7 +140,7 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     className={errors.subject ? 'error' : ''}
-                    placeholder="How can we help?"
+                    placeholder="Conférence, interview, partenariat…"
                   />
                   {errors.subject && <span className="error-message">{errors.subject}</span>}
                 </div>
@@ -169,14 +153,14 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className={errors.message ? 'error' : ''}
-                    placeholder="Tell us more about your project..."
+                    placeholder="Détaillez votre projet ou votre demande…"
                     rows={5}
                   />
                   {errors.message && <span className="error-message">{errors.message}</span>}
                 </div>
 
                 <button type="submit" className="submit-button">
-                  Send Message
+                  Envoyer le message
                 </button>
               </form>
             )}

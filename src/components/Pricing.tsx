@@ -1,102 +1,51 @@
 import React from 'react';
 import './Pricing.css';
 
-const Pricing: React.FC = () => {
-  const plans = [
-    {
-      name: 'Starter',
-      price: '29',
-      description: 'Perfect for small projects and personal websites',
-      features: [
-        '5 Projects',
-        'Basic Templates',
-        'Community Support',
-        'Mobile Responsive',
-        '10GB Storage'
-      ],
-      popular: false
-    },
-    {
-      name: 'Professional',
-      price: '79',
-      description: 'Best for professionals and growing businesses',
-      features: [
-        'Unlimited Projects',
-        'Premium Templates',
-        'Priority Support',
-        'Advanced Features',
-        '100GB Storage',
-        'Custom Domain',
-        'Analytics Dashboard'
-      ],
-      popular: true
-    },
-    {
-      name: 'Enterprise',
-      price: '199',
-      description: 'For large teams and organizations',
-      features: [
-        'Everything in Pro',
-        'Dedicated Support',
-        'Custom Development',
-        'Team Collaboration',
-        'Unlimited Storage',
-        'API Access',
-        'White Label Option',
-        'Advanced Security'
-      ],
-      popular: false
-    }
-  ];
+const partners = [
+  { name: 'BMW Motorsport', tag: 'Partenaire historique' },
+  { name: 'Red Bull Air Race', tag: 'Challenger Class' },
+  { name: 'Stand 21', tag: 'Équipement pilote' },
+  { name: 'FFA', tag: 'Fédération Française Aéronautique' },
+  { name: 'Breitling', tag: 'Horlogerie de précision' },
+  { name: 'Aéro-club de France', tag: 'Institution' },
+  { name: 'Les Ailes du Petit Prince', tag: 'Ambassadrice' },
+  { name: 'Total Energies', tag: 'Carburants aviation' },
+];
 
+const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="pricing">
-      <div className="pricing-container">
-        <div className="pricing-header">
-          <h2 className="pricing-title">
-            Simple, <span className="gradient-text">Transparent Pricing</span>
-          </h2>
-          <p className="pricing-subtitle">
-            Choose the perfect plan for your needs. All plans include a 14-day free trial.
+    <section id="partenaires" className="partners">
+      <div className="container">
+        <div className="partners-header">
+          <span className="section-kicker">Soutiens</span>
+          <h2 className="section-title">Partenaires &amp; Sponsors</h2>
+          <div className="gold-rule center" />
+          <p className="section-subtitle">
+            Voler au plus haut niveau, c'est aussi une aventure collective. Merci à celles et ceux
+            qui rendent ce parcours possible.
           </p>
         </div>
 
-        <div className="pricing-grid">
-          {plans.map((plan, index) => (
-            <div 
-              key={index} 
-              className={`pricing-card ${plan.popular ? 'popular' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {plan.popular && <div className="popular-badge">Most Popular</div>}
-              
-              <h3 className="plan-name">{plan.name}</h3>
-              <div className="plan-price">
-                <span className="currency">$</span>
-                <span className="amount">{plan.price}</span>
-                <span className="period">/month</span>
+        <div className="partners-grid">
+          {partners.map((p) => (
+            <div className="partner-card" key={p.name}>
+              <div className="partner-logo" aria-hidden="true">
+                {p.name
+                  .split(' ')
+                  .map((w) => w[0])
+                  .slice(0, 3)
+                  .join('')}
               </div>
-              <p className="plan-description">{plan.description}</p>
-
-              <ul className="features-list">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx}>
-                    <span className="check-icon">✓</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <button className={`plan-button ${plan.popular ? 'popular-button' : ''}`}>
-                Get Started
-              </button>
+              <div className="partner-name">{p.name}</div>
+              <div className="partner-tag">{p.tag}</div>
             </div>
           ))}
         </div>
 
-        <p className="pricing-note">
-          All plans include SSL certificate, 99.9% uptime guarantee, and can be cancelled anytime.
-        </p>
+        <div className="partners-cta">
+          <p>Vous souhaitez associer votre marque à cette aventure&nbsp;?</p>
+          <a href="#contact" className="partners-button">Devenir partenaire</a>
+        </div>
       </div>
     </section>
   );

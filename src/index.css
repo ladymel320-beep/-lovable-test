@@ -5,8 +5,19 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --color-navy: #0a1f3d;
+  --color-navy-deep: #061329;
+  --color-sky: #3b82f6;
+  --color-sky-light: #60a5fa;
+  --color-gold: #fbbf24;
+  --color-gold-deep: #d97706;
+  --color-cream: #fdf6e3;
+  --color-text: #1a202c;
+  --color-text-muted: #4b5563;
+  --color-text-light: #9ca3af;
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
 
   font-synthesis: none;
@@ -18,9 +29,15 @@
 body {
   margin: 0;
   background-color: #ffffff;
-  color: #1f2937;
+  color: var(--color-text);
   min-width: 320px;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 #root {
